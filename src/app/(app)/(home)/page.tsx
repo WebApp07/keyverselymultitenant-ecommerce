@@ -1,18 +1,3 @@
-import configPromise from "@payload-config";
-import { getPayload } from "payload";
-
-export default async function Home() {
-  const payload = await getPayload({
-    config: configPromise,
-  });
-
-  const data = payload.find({
-    collection: "categories",
-  });
-
-  return (
-    <div>
-      <div>{JSON.stringify(data, null, 2)}</div>
-    </div>
-  );
+export default function Home() {
+  return <div>Home Page</div>;
 }

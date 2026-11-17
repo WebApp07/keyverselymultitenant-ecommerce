@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate:types": "bunx --bun payload generate:types --disable-transpile"
+    "generate:types": "bunx --bun payload generate:types --disable-transpile",
+    "db:fresh": "payload migrate:fresh"
   },
   "dependencies": {
     "@payloadcms/db-mongodb": "^3.93.0",
