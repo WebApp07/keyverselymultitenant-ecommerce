@@ -5,6 +5,7 @@ import { Footer } from "./footer";
 import Navbar from "./navbar";
 import { SearchFilters } from "./search-filters";
 import { Category } from "@/payload-types";
+import { CustomCategory } from "./type";
 
 interface Props {
   children: React.ReactNode;
@@ -23,20 +24,16 @@ const Layout = async ({ children }: Props) => {
         exists: false,
       },
     },
+    sort: "name",
   });
 
-  const formattedData = data.docs.map((doc) => ({
+  const formattedData: CustomCategory[] = data.docs.map((doc) => ({
     ...doc,
     subcategories: (doc.subcategories?.docs ?? []).map((doc) => ({
-      // Becasue of "depth 1' We are confident "doc" will be a type of "category""
       ...(doc as Category),
       subcategories: undefined,
     })),
   }));
-
-  console.log("data", data);
-
-  console.log("formattedData", formattedData);
 
   return (
     <div className="flex flex-col min-h-screen">
