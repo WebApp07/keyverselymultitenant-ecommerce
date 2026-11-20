@@ -10,7 +10,6 @@ import { useQuery } from "@tanstack/react-query";
 import { cn } from "@/lib/utils";
 import { useTRPC } from "@/trpc/client";
 import { Button } from "@/components/ui/button";
-
 import { NavbarSidebar } from "./navbar-sidebar";
 
 const poppins = Poppins({
@@ -58,7 +57,7 @@ export const Navbar = () => {
     <nav className="h-20 flex border-b justify-between font-medium bg-white">
       <Link href="/" className="pl-6 flex items-center">
         <span className={cn("text-5xl font-semibold", poppins.className)}>
-          funroad
+          keyversely
         </span>
       </Link>
 
